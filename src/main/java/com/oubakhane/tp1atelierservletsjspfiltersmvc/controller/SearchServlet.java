@@ -1,6 +1,8 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.controller;
 
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Role;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.AuteurServices;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.Authentification;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.LivreServices;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,10 +26,9 @@ public class SearchServlet extends HttpServlet {
 
 
         Role role = (Role) request.getSession().getAttribute("role");
-
-        System.out.println("==============Role======"+request.getSession().getAttribute("role"));
-
         if (role.equals(Role.admin)) {
+            List<Auteur> auteurs = AuteurServices.findAllAuteurs();
+            request.setAttribute("auteurs", auteurs);
             request.getRequestDispatcher("/view/admin.jsp").forward(request, response);
         } else if (role.equals(Role.visiteur)) {
             request.getRequestDispatcher("/view/visiteur.jsp").forward(request, response);

@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Livre" %><%--
+<%@ page import="com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Livre" %>
+<%@ page import="com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur" %><%--
   Created by IntelliJ IDEA.
   User: radouane
   Date: 4/8/23
@@ -172,11 +173,22 @@
             cursor: pointer;
         }
 
+        body {
+            background-color: #f2f2f2;
+        }
+
+
 
     </style>
 </head>
 <body>
-<h1>Admin - ${sessionScope.get('login')}</h1>
+<div>
+    <h1>Admin - ${sessionScope.get('login')} </h1>
+
+    <form action="authentification-servlet" method="get">
+        <input type="submit" value="Log Out" class="search" style="background-color: #c82333">
+    </form>
+</div>
 
 <form action="search-servlet" method="get">
     <input type="text" placeholder="Recherche..." name="search">
@@ -188,7 +200,8 @@
     <button type="submit" class="search">Recherche</button>
 </form>
 
-<form action="add-servlet" method="get">
+<h1>Livres</h1>
+<form action="add-livre-servlet" method="get">
     <button class="add-button">Ajouter</button>
 </form>
 
@@ -204,6 +217,8 @@
     out.println("<th>Description</th>");
     out.println("<th>Date Edition</th>");
     out.println("<th>Editeur</th>");
+    out.println("<th>Nom Auteur</th>");
+    out.println("<th>Prenom Auteur</th>");
     out.println("<th></th>");
     out.println("<th></th>");
     out.println("</tr>");
@@ -213,15 +228,17 @@
         out.println("<td>" + livres.get(i).getDescription() + "</td>");
         out.println("<td>" + livres.get(i).getDateEdition() + "</td>");
         out.println("<td>" + livres.get(i).getEditeur() + "</td>");
+        out.println("<td>" + livres.get(i).getAuteur().getNom() + "</td>");
+        out.println("<td>" + livres.get(i).getAuteur().getPrenom() + "</td>");
 
         out.print("<td>");
-        out.print("<form action=\"edit-servlet\" method=\"get\">");
+        out.print("<form action=\"edit-livre-servlet\" method=\"get\">");
         out.print("<button class=\"edit-btn\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Modifier</button>");
         out.print("</form>");
         out.print("</td>");
 
         out.print("<td>");
-        out.print("<form action=\"delete-servlet\" method=\"delete\">");
+        out.print("<form action=\"delete-livre-servlet\" method=\"post\">");
         out.print("<button class=\"delete-btn\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Supprimer</button>");
         out.print("</form>");
         out.print("</td>");
@@ -231,6 +248,54 @@
 
     out.println("</table>");
 %>
+
+
+<!-- ======================================================================================== -->
+
+<h1>Auteurs</h1>
+<form action="add-auteur-servlet" method="get">
+    <button class="add-button">Ajouter</button>
+</form>
+
+
+<%
+    List<Auteur> auteurs = (List<Auteur>) request.getAttribute("auteurs");
+%>
+
+<%
+    out.println("<table>");
+    out.println("<tr>");
+    out.println("<th>Nom</th>");
+    out.println("<th>Prenom</th>");
+    out.println("<th>Genre</th>");
+    out.println("<th></th>");
+    out.println("<th></th>");
+    out.println("</tr>");
+    for (int i = 0; i < auteurs.size(); i++) {
+        out.println("<tr>");
+        out.println("<td>" + auteurs.get(i).getNom() + "</td>");
+        out.println("<td>" + auteurs.get(i).getPrenom() + "</td>");
+        out.println("<td>" + auteurs.get(i).getGenre() + "</td>");
+
+        out.print("<td>");
+        out.print("<form action=\"edit-auteur-servlet\" method=\"get\">");
+        out.print("<button class=\"edit-btn\" type=\"submit\" name=\"matricule\" value=\"" + auteurs.get(i).getMatricule() + "\">Modifier</button>");
+        out.print("</form>");
+        out.print("</td>");
+
+        out.print("<td>");
+        out.print("<form action=\"delete-auteur-servlet\" method=\"post\">");
+        out.print("<button class=\"delete-btn\" type=\"submit\" name=\"matricule\" value=\"" + auteurs.get(i).getMatricule() + "\">Supprimer</button>");
+        out.print("</form>");
+        out.print("</td>");
+
+        out.println("</tr>");
+    }
+
+    out.println("</table>");
+%>
+
+
 
 
 

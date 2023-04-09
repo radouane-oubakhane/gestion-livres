@@ -37,7 +37,7 @@ public class AuteurDoa implements Dao {
         Auteur auteur = (Auteur) o;
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.remove(auteur);
+        em.remove(em.contains(auteur) ? auteur : em.merge(auteur));
         em.getTransaction().commit();
     }
 

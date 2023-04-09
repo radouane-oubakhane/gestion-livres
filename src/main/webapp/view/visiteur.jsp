@@ -135,7 +135,13 @@
     </style>
 </head>
 <body>
-<h1>Visiteur - ${sessionScope.get('login')}</h1>
+<div>
+<h1>Visiteur - ${sessionScope.get('login')} </h1>
+
+<form action="authentification-servlet" method="get">
+    <input type="submit" value="Log Out" class="search" style="background-color: #c82333">
+</form>
+</div>
 
 <form action="search-servlet" method="get">
     <input type="text" placeholder="Recherche..." name="search">

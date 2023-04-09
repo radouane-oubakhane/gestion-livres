@@ -1,10 +1,13 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.services;
 
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.dao.LivreDoa;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Editeur;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Livre;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
+import java.sql.Date;
 import java.util.List;
 
 public class LivreServices {
@@ -40,4 +43,26 @@ public class LivreServices {
         livreDoa.add(livre);
     }
 
+    public static void addLivre(String titre, String description, Date dateEdition, Editeur editeur, int matricule) {
+        LivreDoa livreDoa = new LivreDoa(emf);
+        Auteur auteur = AuteurServices.findAuteur(matricule);
+        livreDoa.add(new Livre(titre, description, dateEdition, editeur, auteur));
+    }
+
+    public static Livre findLivre(int id) {
+        LivreDoa livreDoa = new LivreDoa(emf);
+        return (Livre) livreDoa.find(id);
+    }
+
+    public static void editLivre(int id, String titre, String description, Date dateEdition, Editeur editeur, int matricule) {
+        LivreDoa livreDoa = new LivreDoa(emf);
+        Auteur auteur = AuteurServices.findAuteur(matricule);
+        Livre livre = (Livre) livreDoa.find(id);
+        livre.setTitre(titre);
+        livre.setDescription(description);
+        livre.setDateEdition(dateEdition);
+        livre.setEditeur(editeur);
+        livre.setAuteur(auteur);
+        livreDoa.update(livre);
+    }
 }

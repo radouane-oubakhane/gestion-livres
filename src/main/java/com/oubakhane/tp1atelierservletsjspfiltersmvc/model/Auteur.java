@@ -28,12 +28,10 @@ public class Auteur implements Serializable {
     // getters and setters
 
 
-    public Auteur(int matricule, String nom, String prenom, Genre genre, List<Livre> livres) {
-        this.matricule = matricule;
+    public Auteur(String nom, String prenom, Genre genre) {
         this.nom = nom;
         this.prenom = prenom;
         this.genre = genre;
-        this.livres = livres;
     }
 
     public Auteur() {

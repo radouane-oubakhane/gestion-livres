@@ -1,6 +1,6 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.dao;
 
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.User;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -35,10 +35,10 @@ public class LivreDoa implements Dao {
 
     @Override
     public void delete(Object o) {
-        Livre livre = (Livre) o;
         EntityManager em = emf.createEntityManager();
+        Livre livre = (Livre) o;
         em.getTransaction().begin();
-        em.remove(livre);
+        em.remove(em.contains(livre) ? livre : em.merge(livre));
         em.getTransaction().commit();
     }
 

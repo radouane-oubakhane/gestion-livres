@@ -1,6 +1,5 @@
 <%@ page import="com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Livre" %><%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: radouane
   Date: 4/9/23
@@ -67,24 +66,15 @@
 
 
 
-<form action="edit-livre-servlet" method="post">
-    <input type="hidden" name="isbn" value="<%=((Livre) request.getAttribute("livre")).getISBN()%>">
+<form action="add-livre-servlet" method="post">
     <label for="title">Title:</label>
-    <input type="text" id="title" name="titre"
-           value="<%=((Livre) request.getAttribute("livre")).getTitre()%>"
-           required><br>
+    <input type="text" id="title" name="titre" required ><br>
 
     <label for="description">Description:</label>
-    <textarea id="description" name="description"
-              placeholder="<%=((Livre) request.getAttribute("livre")).getDescription()%>"
-              required
-    ></textarea><br>
+    <textarea id="description" name="description" required></textarea><br>
 
     <label for="dateEdition">Publication Date:</label>
-    <input type="date" id="dateEdition" name="dateEdition"
-           placeholder="<%=((Livre) request.getAttribute("livre")).getDateEdition()%>"
-           required
-    ><br>
+    <input type="date" id="dateEdition" name="dateEdition" required><br>
 
     <label for="editeur">Editeur:</label>
     <select id="editeur" name="editeur" required>
@@ -98,16 +88,15 @@
     <select id="matricule" name="matricule" required>
         <option value="">All</option>
         <%
-            List<Auteur> auteurs = (List<Auteur>) request.getAttribute("auteurs");
+        List<Auteur> auteurs = (List<Auteur>) request.getAttribute("auteurs");
 
-            for (Auteur auteur : auteurs) {
-                out.println("<option value=\"" + auteur.getMatricule() + "\">" + auteur.getNom() + " " + auteur.getPrenom() + "</option>");
-            }
+        for (Auteur auteur : auteurs) {
+            out.println("<option value=\"" + auteur.getMatricule() + "\">" + auteur.getNom() + " " + auteur.getPrenom() + "</option>");
+        }
         %>
     </select><br>
 
     <input type="submit" value="Submit">
-
 
     <%
         boolean error = request.getAttribute("error") != null;
@@ -115,7 +104,6 @@
     %>
     <p class="error-message">${requestScope.get('error')}</p>
     <% } %>
-
 </form>
 
 

@@ -34,8 +34,7 @@ public class Livre implements Serializable {
     public Livre() {
     }
 
-    public Livre(int ISBN, String titre, String description, Date dateEdition, Editeur editeur, Auteur auteur) {
-        this.ISBN = ISBN;
+    public Livre(String titre, String description, Date dateEdition, Editeur editeur, Auteur auteur) {
         this.titre = titre;
         this.description = description;
         this.dateEdition = dateEdition;
