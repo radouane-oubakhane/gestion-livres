@@ -1,6 +1,6 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.controller;
 
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Role;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Role;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.Authentification;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

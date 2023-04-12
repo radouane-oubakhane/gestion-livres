@@ -132,26 +132,146 @@
         }
 
 
+
+
+
+
+
+        div.header {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"], select {
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+        }
+
+        select {
+            width: 120px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+
+
+
+
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 20px;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .logout {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 2px solid white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logout:hover {
+            background-color: white;
+            color: #333;
+        }
+
+
+
     </style>
 </head>
 <body>
 <div>
-<h1>Visiteur - ${sessionScope.get('login')} </h1>
-
-<form action="authentification-servlet" method="get">
-    <input type="submit" value="Log Out" class="search" style="background-color: #c82333">
-</form>
+    <%@ include file = "components/visiteurnavbar.html" %>
+</div>
+<div class="header">
+    <h1>Liste des livres</h1>
+    <form action="search-servlet" method="get">
+        <input type="text" placeholder="Recherche..." name="search">
+        <select name="searchType">
+            <option value="all">All</option>
+            <option value="titre">Titre</option>
+            <option value="author">Auteur</option>
+        </select>
+        <button type="submit">Recherche</button>
+    </form>
 </div>
 
-<form action="search-servlet" method="get">
-    <input type="text" placeholder="Recherche..." name="search">
-    <select name="searchType">
-        <option value="all">All</option>
-        <option value="titre">Title</option>
-        <option value="author">Author</option>
-    </select>
-    <button type="submit">Recherche</button>
-</form>
+
+
 
 <%
     List<Livre> livres = (List<Livre>) request.getAttribute("livres");

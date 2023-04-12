@@ -1,6 +1,6 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.controller;
 
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Editeur;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Editeur;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.AuteurServices;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.LivreServices;
 import jakarta.servlet.ServletException;

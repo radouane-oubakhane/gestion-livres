@@ -2,7 +2,7 @@ package com.oubakhane.tp1atelierservletsjspfiltersmvc.services;
 
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.dao.AuteurDoa;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur;
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Genre;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Genre;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 

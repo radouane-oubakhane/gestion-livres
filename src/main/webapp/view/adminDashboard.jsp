@@ -132,6 +132,130 @@
             }
         }
 
+
+
+
+
+
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 20px;
+            align-items: center;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .logout {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px 20px;
+            border: 2px solid white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logout:hover {
+            background-color: white;
+            color: #333;
+        }
+
+
+
+
+        div.header {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="text"], select {
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+        }
+
+        select {
+            width: 120px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+
+
         .edit-btn {
             background-color: #007bff;
             color: #fff;
@@ -173,9 +297,7 @@
             cursor: pointer;
         }
 
-        body {
-            background-color: #f2f2f2;
-        }
+
 
 
 
@@ -183,27 +305,26 @@
 </head>
 <body>
 <div>
-    <h1>Admin - ${sessionScope.get('login')} </h1>
+    <%@ include file = "components/adminnavbar.html" %>
+</div>
 
-    <form action="authentification-servlet" method="get">
-        <input type="submit" value="Log Out" class="search" style="background-color: #c82333">
+<div class="header">
+    <h1>Liste des livres</h1>
+    <form action="add-livre-servlet" method="get">
+        <button class="add-button">Ajouter</button>
+    </form>
+    <form action="search-servlet" method="get">
+        <input type="text" placeholder="Recherche..." name="search">
+        <select name="searchType">
+            <option value="all">All</option>
+            <option value="titre">Titre</option>
+            <option value="author">Auteur</option>
+        </select>
+        <button type="submit" class="search">Recherche</button>
     </form>
 </div>
 
-<form action="search-servlet" method="get">
-    <input type="text" placeholder="Recherche..." name="search">
-    <select name="searchType">
-        <option value="all">All</option>
-        <option value="titre">Title</option>
-        <option value="author">Author</option>
-    </select>
-    <button type="submit" class="search">Recherche</button>
-</form>
 
-<h1>Livres</h1>
-<form action="add-livre-servlet" method="get">
-    <button class="add-button">Ajouter</button>
-</form>
 
 
 <%
@@ -233,15 +354,16 @@
 
         out.print("<td>");
         out.print("<form action=\"edit-livre-servlet\" method=\"get\">");
-        out.print("<button class=\"edit-btn\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Modifier</button>");
+        out.print("<button style=\"background-color: #4CAF50; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Modifier</button>");
         out.print("</form>");
         out.print("</td>");
 
         out.print("<td>");
         out.print("<form action=\"delete-livre-servlet\" method=\"post\">");
-        out.print("<button class=\"delete-btn\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Supprimer</button>");
+        out.print("<button style=\"background-color: #f44336; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;\" type=\"submit\" name=\"id\" value=\"" + livres.get(i).getISBN() + "\">Supprimer</button>");
         out.print("</form>");
         out.print("</td>");
+
 
         out.println("</tr>");
     }
@@ -250,50 +372,7 @@
 %>
 
 
-<!-- ======================================================================================== -->
 
-<h1>Auteurs</h1>
-<form action="add-auteur-servlet" method="get">
-    <button class="add-button">Ajouter</button>
-</form>
-
-
-<%
-    List<Auteur> auteurs = (List<Auteur>) request.getAttribute("auteurs");
-%>
-
-<%
-    out.println("<table>");
-    out.println("<tr>");
-    out.println("<th>Nom</th>");
-    out.println("<th>Prenom</th>");
-    out.println("<th>Genre</th>");
-    out.println("<th></th>");
-    out.println("<th></th>");
-    out.println("</tr>");
-    for (int i = 0; i < auteurs.size(); i++) {
-        out.println("<tr>");
-        out.println("<td>" + auteurs.get(i).getNom() + "</td>");
-        out.println("<td>" + auteurs.get(i).getPrenom() + "</td>");
-        out.println("<td>" + auteurs.get(i).getGenre() + "</td>");
-
-        out.print("<td>");
-        out.print("<form action=\"edit-auteur-servlet\" method=\"get\">");
-        out.print("<button class=\"edit-btn\" type=\"submit\" name=\"matricule\" value=\"" + auteurs.get(i).getMatricule() + "\">Modifier</button>");
-        out.print("</form>");
-        out.print("</td>");
-
-        out.print("<td>");
-        out.print("<form action=\"delete-auteur-servlet\" method=\"post\">");
-        out.print("<button class=\"delete-btn\" type=\"submit\" name=\"matricule\" value=\"" + auteurs.get(i).getMatricule() + "\">Supprimer</button>");
-        out.print("</form>");
-        out.print("</td>");
-
-        out.println("</tr>");
-    }
-
-    out.println("</table>");
-%>
 
 
 

@@ -1,5 +1,6 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.model;
 
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Genre;
 import jakarta.persistence.*;
 
 import java.io.Serializable;

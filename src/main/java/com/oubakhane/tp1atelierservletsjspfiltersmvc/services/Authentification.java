@@ -1,7 +1,7 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.services;
 
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.dao.UserDoa;
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Role;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Role;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.User;

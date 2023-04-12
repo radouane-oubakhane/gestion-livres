@@ -1,6 +1,7 @@
 package com.oubakhane.tp1atelierservletsjspfiltersmvc.controller;
 
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Genre;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Genre;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.services.AuteurServices;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "AddAuteurServlet", urlPatterns = "/add-auteur-servlet")
 public class AddAuteurServlet extends HttpServlet {
@@ -32,7 +34,9 @@ public class AddAuteurServlet extends HttpServlet {
                     prenom,
                     Genre.valueOf(genre
                     ));
-            response.sendRedirect("dashboard-servlet");
+            List<Auteur> auteurs = AuteurServices.findAllAuteurs();
+            request.setAttribute("auteurs", auteurs);
+            request.getRequestDispatcher("/view/adminDashboardAuteur.jsp").forward(request, response);
         }
     }
 

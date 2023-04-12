@@ -2,7 +2,7 @@ package com.oubakhane.tp1atelierservletsjspfiltersmvc.services;
 
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.dao.LivreDoa;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Auteur;
-import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Editeur;
+import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.enums.Editeur;
 import com.oubakhane.tp1atelierservletsjspfiltersmvc.model.Livre;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
