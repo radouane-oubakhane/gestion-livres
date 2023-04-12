@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.*;
 
 @Entity
-@Table(name = "LIVRE")
 public class Livre implements Serializable {
 
     @Id
@@ -29,7 +28,6 @@ public class Livre implements Serializable {
     private Editeur editeur;
 
     @ManyToOne
-    @JoinColumn(name = "matricule")
     private Auteur auteur;
 
     public Livre() {

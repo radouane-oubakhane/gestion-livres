@@ -10,30 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5cb7703-a98d-46b0-8be2-1655cc212c65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/DashboardAuteursServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/adminDashboardAuteur.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/components/adminnavbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/view/components/visiteurnavbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/filter/AdminFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/filter/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f743e121-b68a-4c35-8144-b0e9ba5a5399.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f743e121-b68a-4c35-8144-b0e9ba5a5399.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AddAuteurServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AddAuteurServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AddLivreServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AddLivreServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AuthentificationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/AuthentificationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/DashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/DashboardServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/DeleteAuteurServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/DeleteAuteurServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/EditAuteurServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/EditAuteurServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/EditLivreServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/EditLivreServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/controller/SearchServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/dao/AuteurDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/dao/AuteurDoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/dao/LivreDoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/dao/LivreDoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Auteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Auteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Editeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/enums/Editeur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/enums/Genre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Livre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Livre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/enums/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/enums/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/model/enums/Genre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/AuteurServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/AuteurServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/Authentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/Authentification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/LivreServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oubakhane/tp1atelierservletsjspfiltersmvc/services/LivreServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/adminDashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/visiteur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/visiteurDashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/addAuteur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/addAuteur.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/adminDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/adminDashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/editAuteur.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/editAuteur.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/visiteurDashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/visiteurDashboard.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +183,7 @@
       <workItem from="1681132305058" duration="604000" />
       <workItem from="1681136526088" duration="306000" />
       <workItem from="1681204835770" duration="44000" />
-      <workItem from="1681314169429" duration="9885000" />
+      <workItem from="1681314169429" duration="21480000" />
     </task>
     <servers />
   </component>

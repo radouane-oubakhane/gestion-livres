@@ -7,10 +7,10 @@ import java.io.Serializable;
 import java.util.*;
 
 @Entity
-@Table(name = "AUTEUR")
 public class Auteur implements Serializable {
     @Id
     @Column(name = "matricule")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int matricule;
 
     @Column(name = "nom")
@@ -23,8 +23,8 @@ public class Auteur implements Serializable {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
-    @OneToMany(mappedBy = "auteur")
-    private List<Livre> livres = new ArrayList<>();
+    @OneToMany(mappedBy = "auteur", cascade = CascadeType.REMOVE)
+    private List<Livre> livres;
 
     // getters and setters
 

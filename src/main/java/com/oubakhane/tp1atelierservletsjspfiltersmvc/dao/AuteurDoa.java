@@ -53,4 +53,12 @@ public class AuteurDoa implements Dao {
         Query query = em.createQuery("SELECT auteur FROM Auteur As auteur", Auteur.class);
         return query.getResultList();
     }
+
+
+    public Auteur findByNom(String nom) {
+        EntityManager em = emf.createEntityManager();
+        Query query = em.createQuery("SELECT auteur FROM Auteur As auteur WHERE auteur.nom = :nom", Auteur.class);
+        query.setParameter("nom", nom);
+        return query.getResultList().isEmpty() ? null : (Auteur) query.getResultList().get(0);
+    }
 }

@@ -64,7 +64,7 @@ public class LivreDoa implements Dao {
 
     public List findByAuteur(String auteur) {
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("SELECT livre FROM Livre As livre WHERE livre.auteur.prenom LIKE :auteur", Livre.class);
+        Query query = em.createQuery("SELECT livre FROM Livre As livre WHERE livre.auteur.nom LIKE :auteur OR livre.auteur.prenom LIKE :auteur", Livre.class);
         query.setParameter("auteur", auteur);
         return query.getResultList();
     }

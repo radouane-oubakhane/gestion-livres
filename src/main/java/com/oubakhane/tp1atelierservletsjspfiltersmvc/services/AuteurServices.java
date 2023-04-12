@@ -43,5 +43,8 @@ public class AuteurServices {
     }
 
 
-
+    public static void findAuteurByNom(String nom) {
+        AuteurDoa auteurDoa = new AuteurDoa(emf);
+        auteurDoa.findByNom(nom);
+    }
 }

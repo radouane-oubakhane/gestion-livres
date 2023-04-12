@@ -1088,150 +1088,147 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="297" parent="1" name="FPJ">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="gestion_livres">
+    <schema id="298" parent="1" name="student">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="299" parent="1" name="debian-sys-maint">
+    <schema id="299" parent="1" name="amigoscode">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="300" parent="1" name="gestion_livres">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="301" parent="1" name="debian-sys-maint">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="300" parent="1" name="mysql.infoschema">
+    <user id="302" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="301" parent="1" name="mysql.session">
+    <user id="303" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="302" parent="1" name="mysql.sys">
+    <user id="304" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="303" parent="1" name="root">
+    <user id="305" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="304" parent="298" name="AUTEUR">
+    <table id="306" parent="300" name="Auteur">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="298" name="LIVRE">
+    <table id="307" parent="300" name="Livre">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="298" name="USER">
+    <table id="308" parent="300" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <check id="307" parent="304" name="AUTEUR_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>`genre` in (_utf8mb4\&apos;Masculin\&apos;,_utf8mb4\&apos;FÃ©minin\&apos;)</Predicate>
-    </check>
-    <column id="308" parent="304" name="matricule">
+    <column id="309" parent="306" name="matricule">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="309" parent="304" name="nom">
-      <DasType>text|0s</DasType>
+    <column id="310" parent="306" name="genre">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="310" parent="304" name="prenom">
-      <DasType>text|0s</DasType>
+    <column id="311" parent="306" name="nom">
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="311" parent="304" name="genre">
-      <DasType>text|0s</DasType>
+    <column id="312" parent="306" name="prenom">
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="312" parent="304" name="PRIMARY">
+    <index id="313" parent="306" name="PRIMARY">
       <ColNames>matricule</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="313" parent="304" name="PRIMARY">
+    <key id="314" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="314" parent="305" name="LIVRE_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>`editeur` in (_utf8mb4\&apos;ENI\&apos;,_utf8mb4\&apos;DUNOD\&apos;,_utf8mb4\&apos;FIRST\&apos;)</Predicate>
-    </check>
-    <column id="315" parent="305" name="ISBN">
+    <column id="315" parent="307" name="ISBN">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="316" parent="305" name="titre">
-      <DasType>text|0s</DasType>
+    <column id="316" parent="307" name="date_edition">
+      <DasType>datetime(6)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="317" parent="305" name="description">
-      <DasType>text|0s</DasType>
+    <column id="317" parent="307" name="description">
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="318" parent="305" name="date_edition">
-      <DasType>date|0s</DasType>
+    <column id="318" parent="307" name="editeur">
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="319" parent="305" name="editeur">
-      <DasType>text|0s</DasType>
+    <column id="319" parent="307" name="titre">
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="320" parent="305" name="matricule">
+    <column id="320" parent="307" name="auteur_matricule">
       <DasType>int|0s</DasType>
       <Position>6</Position>
     </column>
-    <foreign-key id="321" parent="305" name="LIVRE_ibfk_1">
-      <ColNames>matricule</ColNames>
+    <foreign-key id="321" parent="307" name="FKhyrhntxk24b39q3q4gi3kmbej">
+      <ColNames>auteur_matricule</ColNames>
       <RefColNames>matricule</RefColNames>
-      <RefTableName>AUTEUR</RefTableName>
+      <RefTableName>Auteur</RefTableName>
     </foreign-key>
-    <index id="322" parent="305" name="PRIMARY">
+    <index id="322" parent="307" name="PRIMARY">
       <ColNames>ISBN</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="323" parent="305" name="matricule">
-      <ColNames>matricule</ColNames>
+    <index id="323" parent="307" name="FKhyrhntxk24b39q3q4gi3kmbej">
+      <ColNames>auteur_matricule</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="324" parent="305" name="PRIMARY">
+    <key id="324" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="325" parent="306" name="USER_chk_1">
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>`role` in (_utf8mb4\&apos;Admin\&apos;,_utf8mb4\&apos;Visiteur\&apos;)</Predicate>
-    </check>
-    <column id="326" parent="306" name="id">
+    <column id="325" parent="308" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="327" parent="306" name="login">
-      <DasType>text|0s</DasType>
+    <column id="326" parent="308" name="login">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="328" parent="306" name="password">
-      <DasType>text|0s</DasType>
+    <column id="327" parent="308" name="password">
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="329" parent="306" name="role">
-      <DasType>text|0s</DasType>
+    <column id="328" parent="308" name="role">
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="330" parent="306" name="PRIMARY">
+    <index id="329" parent="308" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="331" parent="306" name="PRIMARY">
+    <key id="330" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

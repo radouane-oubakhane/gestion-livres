@@ -78,7 +78,7 @@
     <label for="editeur">Genre:</label>
     <select id="editeur" name="genre" required>
         <option value="Masculin">Masculin</option>
-        <option value="Féminin">Féminin</option>
+        <option value="Feminin">Féminin</option>
     </select><br>
 
     <input type="submit" value="Submit">

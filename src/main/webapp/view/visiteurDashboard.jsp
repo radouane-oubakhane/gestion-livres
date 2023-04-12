@@ -264,7 +264,7 @@
         <select name="searchType">
             <option value="all">All</option>
             <option value="titre">Titre</option>
-            <option value="author">Auteur</option>
+            <option value="auteur">Auteur</option>
         </select>
         <button type="submit">Recherche</button>
     </form>

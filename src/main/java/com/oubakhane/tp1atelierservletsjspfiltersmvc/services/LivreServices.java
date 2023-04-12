@@ -22,8 +22,9 @@ public class LivreServices {
         LivreDoa livreDoa = new LivreDoa(emf);
         if (searchType.equals("titre") && !search.isEmpty())
             return livreDoa.findByTitre(search);
-        else if (searchType.equals("auteur") && !search.isEmpty())
+        else if (searchType.equals("auteur") && !search.isEmpty()) {
             return livreDoa.findByAuteur(search);
+        }
         else
             return livreDoa.findAll();
     }
